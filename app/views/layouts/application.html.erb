@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BankProduct</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -13,18 +13,41 @@
   </style>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-fixed-top" style="background-color: white">
 	<div class="navbar-inner">
-
+		<div class="container">
+			<%= link_to "卡悠", home_path, class: "brand", style: "font-size: 32px; font-weight: bold; color:orange"%>
+			<div>
+				<ul class="nav pull-right">
+					<li><a href="#">登录</a></li>
+					<li><a href="#">注册</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="container">
 	<%= yield %>
 
 	<hr>
-	<footer>
-		<p>© Company 2013</p>
-	</footer>
+	
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span4"></div>
+			<div class="span4">
+				<p class="text-center">
+					© Company 2013
+					<%= link_to "关于", about_path, class: "btn-link"%>
+					<%= link_to "联系我们", contact_path, class: "btn-link"%>
+				</p>
+				<p>
+					<%= debug(params) if Rails.env.development? %>
+				</p>
+			</div>
+			<div class="span4"></div>
+		</div>
+	</div>
+	
 </div>
 </body>
 </html>
