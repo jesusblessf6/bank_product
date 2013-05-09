@@ -1,0 +1,2 @@
+module ShoppingDistrictsHelper
+end

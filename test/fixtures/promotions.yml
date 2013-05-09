@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  start_date: 2013-05-09
+  end_date: 2013-05-09
+  content: MyText
+  shop_id: 1
+  branch_id: 1
+  promotion_type_id: 1
+  credit_card_id: 1
+  bank_id: 1
+
+two:
+  name: MyString
+  start_date: 2013-05-09
+  end_date: 2013-05-09
+  content: MyText
+  shop_id: 1
+  branch_id: 1
+  promotion_type_id: 1
+  credit_card_id: 1
+  bank_id: 1

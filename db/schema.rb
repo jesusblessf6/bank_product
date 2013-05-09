@@ -11,12 +11,66 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508131818) do
+ActiveRecord::Schema.define(:version => 20130509144427) do
 
   create_table "banks", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "branches", :force => true do |t|
+    t.string   "name"
+    t.integer  "shop_id"
+    t.integer  "shopping_district_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "credit_cards", :force => true do |t|
+    t.string   "name"
+    t.integer  "bank_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "promotion_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "promotions", :force => true do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "content"
+    t.integer  "shop_id"
+    t.integer  "branch_id"
+    t.integer  "promotion_type_id"
+    t.integer  "credit_card_id"
+    t.integer  "bank_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "shop_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "shopping_districts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.integer  "shop_category_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
