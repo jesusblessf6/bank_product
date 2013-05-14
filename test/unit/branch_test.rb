@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: branches
+#
+#  id                   :integer          not null, primary key
+#  name                 :string(255)
+#  shop_id              :integer
+#  shopping_district_id :integer
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
 require 'test_helper'
 
 class BranchTest < ActiveSupport::TestCase
