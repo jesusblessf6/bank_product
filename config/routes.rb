@@ -1,5 +1,7 @@
 BankProduct::Application.routes.draw do
   
+  resources :users
+
   match '/credit_cards', to: 'credit_cards#index'
 
   get "shopping_districts/new"
