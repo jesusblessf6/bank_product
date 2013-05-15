@@ -1,2 +1,23 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="row">
+	
+	<div class="span4 offset4">
+		<%= form_for(@user) do |f| %>
+		<%= f.label :email, "电子邮件"%>
+		<%= f.text_field :email %>
+
+		<%= f.label :name, "昵称"%>
+		<%= f.text_field :name%>
+
+		<%= f.label :password, "密码" %>
+		<%= f.password_field :password%>
+
+		<%= f.label :password_confirmation, "密码确认"%>
+		<%= f.password_field :password_confirmation%>
+
+		<%= f.submit "注册", class: "btn btn-primary btn-large"%>
+	<%end%>	
+	</div>
+	
+	
+</div>
