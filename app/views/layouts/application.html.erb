@@ -19,7 +19,7 @@
 			<%= link_to "卡悠", home_path, class: "brand", style: "font-size: 32px; font-weight: bold; color:orange"%>
 			<div>
 				<ul class="nav pull-right">
-					<li><a href="#">登录</a></li>
+					<li><%= link_to "登录", signin_path%></li>
 					<li><%= link_to "注册", signup_path %></li>
 				</ul>
 			</div>
@@ -36,7 +36,7 @@
 			<div class="span4"></div>
 			<div class="span4">
 				<p class="text-center">
-					© Company 2013
+					Company 2013
 					<%= link_to "关于", about_path, class: "btn-link"%>
 					<%= link_to "联系我们", contact_path, class: "btn-link"%>
 				</p>

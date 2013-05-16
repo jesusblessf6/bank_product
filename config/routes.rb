@@ -1,6 +1,7 @@
 BankProduct::Application.routes.draw do
   
-  get "sign_ins/new"
+  match '/signin', to: 'sign_ins#new'
+  match '/signout', to: 'sign_ins#destroy'
 
   resources :users
 
