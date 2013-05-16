@@ -1,5 +1,7 @@
 BankProduct::Application.routes.draw do
   
+  get "sign_ins/new"
+
   resources :users
 
   match '/credit_cards', to: 'credit_cards#index'
