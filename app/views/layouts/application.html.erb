@@ -17,12 +17,21 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<%= link_to "卡悠", home_path, class: "brand", style: "font-size: 32px; font-weight: bold; color:orange"%>
+			<%if !session[:current_user_id] then%>
 			<div>
 				<ul class="nav pull-right">
 					<li><%= link_to "登录", signin_path%></li>
 					<li><%= link_to "注册", signup_path %></li>
 				</ul>
 			</div>
+			<%else%>
+			<div>
+				<ul class="nav pull-right">
+					<li>欢迎你：</li>
+					<li><%=current_user.name%></li>
+				</ul>
+			</div>
+			<%end%>
 		</div>
 	</div>
 </div>
