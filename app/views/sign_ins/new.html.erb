@@ -1,8 +1,10 @@
 <%provide(:title, '登录')%>
 
+<%if !flash.empty?%>
 <div class="alert">
-	<%=flash[:message]%>
+	<%=flash[:error]%>
 </div>
+<%end%>
 
 <%= form_for(:sign_in, url: sign_ins_path) do |f|%>
 	
