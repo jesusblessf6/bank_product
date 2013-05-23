@@ -2,8 +2,9 @@ BankProduct::Application.routes.draw do
   
   match '/signin', to: 'sign_ins#new'
   match '/signout', to: 'sign_ins#destroy'
-
+  resources :sign_ins, only: [:new, :create, :destroy]
   resources :users
+  match '/signup', to: 'users#new'
 
   match '/credit_cards', to: 'credit_cards#index'
 
@@ -19,7 +20,7 @@ BankProduct::Application.routes.draw do
 
   resources :banks
 
-  match '/signup', to: 'users#new'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
