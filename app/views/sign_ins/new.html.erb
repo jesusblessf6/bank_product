@@ -1,15 +1,37 @@
 <%provide(:title, '登录')%>
 
-<%if !flash.empty?%>
-<div class="alert">
-	<%=flash[:error]%>
+<hr>
+<div class="row-fluid">
+	<div class="span6 well">
+		<h3>登录</h3>
+
+		<%if !flash.empty?%>
+		<div class="alert">
+			<%=flash[:error]%>
+		</div>
+		<%end%>
+
+		<%= form_for(:sign_in, url: sign_ins_path, html: {class: 'form-horizontal'} ) do |f|%>
+			<div class="control-group">
+				<%= f.label :email, '电子邮件', class: 'control-label'%>
+				<div class="controls">
+					<%= f.text_field :email %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= f.label :password, '密码', class: 'control-label'%>
+				<div class="controls">
+					<%= f.password_field :password%>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<%= f.submit "提交", class: "btn btn-primary"%>
+				</div>
+			</div>
+		<%end%>
+	</div>
+	<div class="span6">
+		
+	</div>
 </div>
-<%end%>
-
-<%= form_for(:sign_in, url: sign_ins_path) do |f|%>
-	
-	<%= f.text_field :email,  placeholder: "电子邮件" %>
-	<%= f.password_field :password, value: '', placeholder: '密码'%>
-
-	<%= f.submit "提交", class: "btn btn-primary"%>
-<%end%>

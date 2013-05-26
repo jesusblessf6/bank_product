@@ -6,7 +6,7 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', '1.3.5'
-gem 'bootstrap-sass', '2.0.4'
+gem 'bootstrap-sass', '2.3.1.2'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'annotate'
 

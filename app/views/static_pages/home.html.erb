@@ -1,27 +1,4 @@
 <% provide(:title, "卡悠-首页")%>
-<div class="container">
-	<div class="hero-unit">
-		<h2 style="color: orange">欢迎</h2>
-	</div>
-	<div class="row">
-		<div class="span3">
-			<div class="well" style="padding: 8px 0">
-				<ul class="nav nav-list">
-					<li class="header">
-						选择银行
-					</li>
-					<% if !@banks.blank? %>
-					  <% for bank in @banks %>
-					    <li>
-					    	<%= link_to bank.name, '#' %>
-					    </li>
-					  <% end %>
-					<% end %>
-				</ul>
-			</div>
-		</div>
-		<div class="span9">
 
-		</div>
-	</div>
-</div>
+<%=render ('layouts/navigation_bar')%>
+
