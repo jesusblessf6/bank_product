@@ -15,7 +15,7 @@
 			<div class="control-group">
 				<%= f.label :email, '电子邮件', class: 'control-label'%>
 				<div class="controls">
-					<%= f.text_field :email, placeholder: 'email'%>
+					<%= f.text_field :email%>
 				</div>
 			</div>
 			<div class="control-group">
@@ -31,7 +31,13 @@
 			</div>
 		<%end%>
 	</div>
-	<div class="span6">
-
+	<div class="span6 text-center muted">
+		<div class="container-fluid" style="margin-top:50px">
+			<span>
+				<h5>
+					还没有注册？ <%= link_to "立即注册", signup_path, class: 'btn btn-success'%>
+				</h5>
+			</span>
+		</div>
 	</div>
 </div>

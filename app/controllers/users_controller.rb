@@ -5,12 +5,14 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(params[:user])
+    
   	if @user.save then
       
       current_user = User.find(@user.id)
       session[:current_user] = @user
   		redirect_to home_path
   	else
+      flash.now[:error] = @user.errors.full_messages.first
       render 'new'
   	end 
   end

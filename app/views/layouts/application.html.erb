@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <style type="text/css">
   	body{
-  		padding-top: 20px;
+  		padding-top: 10px;
   		padding-bottom: 40px;
   	}
 
@@ -46,11 +46,18 @@
 		<div class="row-fluid">
 			<div class="masthead">
 				<ul class="nav nav-pills pull-right">
-					<li><%= link_to "登录", signin_path%></li>
-					<li><%= link_to "注册", signup_path%></li>
+					<%if session[:current_user] == nil then %>
+						<li><%= link_to "登录", signin_path%></li>
+						<li><%= link_to "注册", signup_path%></li>
+					<%else%>
+						<li><%= link_to "退出", signout_path%></li>
+					<%end%>
 				</ul>
 				<h2>
-					<%= link_to image_tag("logo.png", height: 60, width: 135), root_path %><small>卡悠－最贴心的信用卡优惠信息</small>
+					<%= link_to image_tag("logo.png", height: 60, width: 135), root_path %>
+					<small class="text-success">
+						卡悠－最贴心的信用卡优惠信息
+					</small>
 				</h2>
 
 			</div>

@@ -1,29 +1,61 @@
+<%provide :tilte, '注册'%>
 
-<div class="row">
+<hr>
 
-	
-	<div class="span4 offset4 well">
-		<% if @user.errors.count > 0 then %>
+<div class="row-fluid">
+	<div class="span6 well">
+		<h3>
+			注册
+		</h3>
+
+		<%if !flash.empty?%>
 		<div class="alert">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-  			<strong>错误!</strong> <%= @user.errors.full_messages.first %>
+			<%=flash[:error]%>
 		</div>
-		<% end %>
-		<%= form_for(@user) do |f| %>
-			<%= f.label :email, "电子邮件"%> 
-			<%= f.text_field :email %>
+		<%end%>
 
-			<%= f.label :name, "昵称"%>
-			<%= f.text_field :name%>
-
-			<%= f.label :password, "密码" %>
-			<%= f.password_field :password%>
-
-			<%= f.label :password_confirmation, "密码确认"%>
-			<%= f.password_field :password_confirmation%><br>
-
-			<%= f.submit "注册", class: "btn btn-primary btn-large"%>
-		<%end%>	
+		<%=form_for @user, html: {class: 'form-horizontal'} do |f| %>
+			<div class="control-group">
+				<%= f.label :email, "电子邮件", class: 'control-label'%>
+				<div class="controls">
+					<%= f.text_field :email%>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= f.label :name, "昵称", class: 'control-label'%>
+				<div class="controls">
+					<%= f.text_field :name%>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= f.label :password, "密码", class: 'control-label'%>
+				<div class="controls">
+					<%= f.password_field :password%>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= f.label :password_confirmation, "密码确认", class: 'control-label'%>
+				<div class="controls">
+					<%= f.password_field :password_confirmation%>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<%= f.submit "提交", class: 'btn btn-primary'%>
+				</div>
+			</div>
+		<%end%>
 	</div>
-	
+
+	<div class="span6 text-center muted">
+		<div class="container-fluid" style="margin-top:50px">
+			<span>
+				<h5>
+					已经有账户了？ <%= link_to "直接登录", signin_path, class: 'btn btn-success'%>
+				</h5>
+			</span>
+		</div>
+	</div>
 </div>
+
+
